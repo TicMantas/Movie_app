@@ -7,7 +7,7 @@ export const TMDB_CONFIG = {
     },
 }
 
-export const fetchPoplarMovies = async ({query} : {query: string}) => {
+export const fetchMovies = async ({query} : {query: string}) => {
     const endpoint = query
         ? `${TMDB_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}` // If a query is provided, use the search endpoint
         : `${TMDB_CONFIG.BASE_URL}/discover/movie?sort_by=popularity.desc`;// If no query is provided, use the discover endpoint
