@@ -4,9 +4,9 @@ import { icons } from "@/constants/icons";
 
 interface Props {
   placeholder?: string;
-  value: string;
+  value?: string;
   onPress?: () => void;
-  onChangeText: (text: string) => void;
+  onChangeText?: (text: string) => void;
 }
 
 const SearchBar = ({placeholder, onPress, value, onChangeText}: Props) => {
