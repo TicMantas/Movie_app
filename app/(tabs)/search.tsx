@@ -29,9 +29,6 @@ const [searchQuery, setSearchQuery] = useState("");
     const search = setTimeout( async () => {
       if (searchQuery.trim()) {
         await loadMovies();
-
-        if (movies?.length > 0 && movies?.[0])
-        updateSearchCount(searchQuery, movies[0])
     }else {
       reset();
     }
@@ -39,6 +36,10 @@ const [searchQuery, setSearchQuery] = useState("");
   return () => clearTimeout(search);
   }, [searchQuery]);
 
+  useEffect(() => {
+    if (movies?.length > 0 && movies?.[0])
+        updateSearchCount(searchQuery, movies[0])
+  }, [movies]);
   return (
     <View className="flex-1 bg-primary">
       <Image
