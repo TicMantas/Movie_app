@@ -10,12 +10,14 @@ const TrendingCard = ({
 }: TrendingCardProps) => {
   return (
     <Link href={`/movie/${movie_id}`} asChild>
-      <TouchableOpacity className="w-32 relative pl-5">
-        <Image
-          source={{ uri: poster_url }}
-          className="w-35 h-52 rounded-lg"
-          resizeMode="cover"
-        />
+  <TouchableOpacity className="w-32 relative pl-5">
+  <View className="w-full aspect-[2/3] bg-gray-200 rounded-lg overflow-hidden">
+    <Image
+      source={{ uri: poster_url }}
+      className="w-full h-52 rounded-lg"
+      resizeMode="cover"
+    />
+  </View>
         <View className="absolute bottom-9 -left-0.25">
           <MarkedView
             maskElement={
