@@ -68,6 +68,9 @@ export default function Index() {
                   Trending Movies
                 </Text>
                 <FlatList
+                horizontal
+                  showsHorizontalScrollIndicator={false}
+                  ItemSeparatorComponent={() => <View className="w-4"/>}
                   className="mb-5 mt-3"
                   data={trendingMovies}
                   renderItem={({ item }) => (
