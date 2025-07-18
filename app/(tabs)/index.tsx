@@ -15,9 +15,11 @@ import { fetchMovies } from "@/services/api";
 import MovieCard from "@/components/MovieCard";
 import { getTrendingMovies } from "@/services/appwrite";
 import TrendingCard from "@/components/TrendingCard";
+import { useTranslation } from "react-i18next";
 
 export default function Index() {
   const router = useRouter();
+  const {t } = useTranslation();
 
   const {
     data: trendingMovies,
@@ -68,7 +70,7 @@ export default function Index() {
             {trendingMovies && (
               <View className="flex-1 mt-5">
                 <Text className="text-white text-lg font-bold mb-3">
-                  Trending Movies
+                  {t("trending")}
                 </Text>
                 <FlatList
                   horizontal
@@ -86,8 +88,7 @@ export default function Index() {
 
             <>
               <Text className="text-white text-lg font-bold mt-5 mb-3">
-                Latest Movies
-              </Text>
+                {t("popularMovies")} </Text>
               <FlatList
                 data={movies}
                 renderItem={({ item }) => (
